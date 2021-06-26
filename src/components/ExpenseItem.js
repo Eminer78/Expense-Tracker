@@ -1,5 +1,4 @@
 import React from "react";
-import { TiDelete } from "react-icons/ti";
 
 const ExpenseItem = (props) => {
   return (
@@ -7,7 +6,9 @@ const ExpenseItem = (props) => {
       {props.name}
       <div>
         <span className="badge alert-success mt-2">${props.cost}</span>
-        <TiDelete size="1.5em"></TiDelete>
+        <button type="submit" className="btn btn-secondary">
+          Delete
+        </button>
       </div>
     </li>
   );
