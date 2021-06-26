@@ -15,6 +15,11 @@ export default class AddExpenseForm extends Component {
     const { name, cost } = this.state;
     event.preventDefault();
     alert(`Expense: ${name} at $${cost}`);
+    this.props.addExpense(name, cost);
+    this.setState({
+      name: "",
+      cost: "",
+    });
   }
   render() {
     return (
