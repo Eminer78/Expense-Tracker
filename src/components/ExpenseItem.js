@@ -1,17 +1,30 @@
-import React from "react";
+import React, { Component } from "react";
 
-const ExpenseItem = (props) => {
-  return (
-    <li className="list-group-item d-flex justify-content-between align-items-center">
-      {props.name}
-      <div>
-        <span className="badge alert-success mt-2">${props.cost}</span>
-        <button type="submit" className="btn btn-secondary">
+export default class ExpenseItems extends Component {
+  constructor(props) {
+    super();
+
+    this.createTasks = this.createTasks.bind(this);
+  }
+
+  createTasks(item) {
+    return (
+      <li>
+        {item.text}
+        <span>${item.cost}</span>
+        <button onClick={() => this.delete(item.key)} key={item.key}>
           Delete
         </button>
-      </div>
-    </li>
-  );
-};
+      </li>
+    );
+  }
+  delete(key) {
+    this.props.delete(key);
+  }
 
-export default ExpenseItem;
+  render() {
+    var expenseEntries = this.props.entries;
+    var listItems = expenseEntries.map(this.createTasks);
+    return <ul className="theList">{listItems}</ul>;
+  }
+}
