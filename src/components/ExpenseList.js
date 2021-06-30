@@ -39,27 +39,51 @@ export default class ExpenseList extends Component {
   }
   render() {
     return (
-      <div className="expenseListMain">
-        Expense Tracker
-        <div className="header">
-          Expense Entry
-          <form onSubmit={this.addItem}>
-            <input
-              ref={(a) => (this._inputElement = a)}
-              placeholder="enter expense"
-              required="required"
-            ></input>
-            <input
-              type="number"
-              ref={(b) => (this.cost = b)}
-              placeholder="enter expense amount"
-              required="required"
-            ></input>
-            <button type="submit">Add</button>
-          </form>
+      <div className="container">
+        <h1 className="mt-3">Expense Tracker</h1>
+        <h3 className="mt-3">Add Expenses</h3>
+        <div className="mt-3">
+          <div className="col-sm">
+            <div className="row ">
+              <form onSubmit={this.addItem}>
+                <div className="col-sm">
+                  <label>Expense</label>
+                  <input
+                    className="form-control py-3"
+                    ref={(a) => (this._inputElement = a)}
+                    placeholder="enter expense"
+                    required="required"
+                  ></input>
+                </div>
+                <div className="col-sm">
+                  <label htmlFor="cost">Cost</label>
+                  <input
+                    className="form-control py-3"
+                    type="number"
+                    ref={(b) => (this.cost = b)}
+                    placeholder="enter expense amount"
+                    required="required"
+                  ></input>
+                </div>
+                <div className="col-sm">
+                  <button type="submit" className="btn btn-primary mt-4">
+                    Add
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
-        Expenses
-        <ExpenseItems entries={this.state.items} delete={this.deleteItem} />
+        <div className="row mt-3">
+          <div className="col-sm">
+            <ul className="list-group">
+              <ExpenseItems
+                entries={this.state.items}
+                delete={this.deleteItem}
+              />
+            </ul>
+          </div>
+        </div>
       </div>
     );
   }

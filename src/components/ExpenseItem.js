@@ -9,12 +9,20 @@ export default class ExpenseItems extends Component {
 
   createTasks(item) {
     return (
-      <li>
+      <li className="list-group-item d-flex justify-content-between align-items-center">
         {item.text}
-        <span>${item.cost}</span>
-        <button onClick={() => this.delete(item.key)} key={item.key}>
-          Delete
-        </button>
+        <div>
+          <span className="label label-danger label-as-badge mx-4 px-4">
+            ${item.cost}
+          </span>
+          <button
+            className="btn btn-secondary"
+            onClick={() => this.delete(item.key)}
+            key={item.key}
+          >
+            Delete
+          </button>
+        </div>
       </li>
     );
   }
