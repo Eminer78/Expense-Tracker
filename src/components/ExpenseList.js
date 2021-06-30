@@ -40,37 +40,46 @@ export default class ExpenseList extends Component {
   render() {
     return (
       <div className="container">
-        <h1 className="mt-3">Expense Tracker</h1>
-        <h3 className="mt-3">Add Expenses</h3>
-        <div className="mt-3">
-          <div className="col-sm">
-            <div className="row ">
-              <form onSubmit={this.addItem}>
-                <div className="col-sm">
-                  <label>Expense</label>
-                  <input
-                    className="form-control py-3"
-                    ref={(a) => (this._inputElement = a)}
-                    placeholder="enter expense"
-                    required="required"
-                  ></input>
-                </div>
-                <div className="col-sm">
-                  <label htmlFor="cost">Cost</label>
-                  <input
-                    className="form-control py-3"
-                    type="number"
-                    ref={(b) => (this.cost = b)}
-                    placeholder="enter expense amount"
-                    required="required"
-                  ></input>
-                </div>
-                <div className="col-sm">
-                  <button type="submit" className="btn btn-primary mt-4">
-                    Add
-                  </button>
-                </div>
-              </form>
+        <h1
+          className="badge-primary rounded-3 mt-3 py-4 px-4"
+          style={{ fontSize: "2em" }}
+        >
+          Expense Tracker
+        </h1>
+        <div className="border border-secondary rounded-3 ">
+          <h3 className="badge-secondary rounded-3 m-1 py-4 px-4">
+            Add Expenses
+          </h3>
+          <div className="mt-3">
+            <div className="col-sm">
+              <div className="row ">
+                <form onSubmit={this.addItem}>
+                  <div className="col-sm">
+                    <label>Expense</label>
+                    <input
+                      className="form-control py-3"
+                      ref={(a) => (this._inputElement = a)}
+                      placeholder="enter expense"
+                      required="required"
+                    ></input>
+                  </div>
+                  <div className="col-sm">
+                    <label htmlFor="cost">Cost</label>
+                    <input
+                      className="form-control py-3"
+                      type="number"
+                      ref={(b) => (this.cost = b)}
+                      placeholder="enter expense amount"
+                      required="required"
+                    ></input>
+                  </div>
+                  <div className="col-sm">
+                    <button type="submit" className="btn btn-primary my-4">
+                      Add
+                    </button>
+                  </div>
+                </form>
+              </div>
             </div>
           </div>
         </div>
