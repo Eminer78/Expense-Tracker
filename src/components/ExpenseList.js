@@ -40,22 +40,24 @@ export default class ExpenseList extends Component {
   render() {
     return (
       <div className="container">
-        <h1
-          className="badge-primary rounded-3 mt-3 py-4 px-4"
-          style={{ fontSize: "2em" }}
-        >
-          Expense Tracker
-        </h1>
         <div className="border border-secondary rounded-3 ">
+          <h1
+            className="badge-primary rounded-3 m-1 py-4 px-4"
+            style={{ fontSize: "2em" }}
+          >
+            Expense Tracker
+          </h1>
+        </div>
+        <div className="border border-secondary rounded-3 mt-3 ">
           <h3 className="badge-secondary rounded-3 m-1 py-4 px-4">
-            Add Expenses
+            Add Expense
           </h3>
           <div className="mt-3">
             <div className="col-sm">
               <div className="row ">
                 <form onSubmit={this.addItem}>
                   <div className="col-sm">
-                    <label>Expense</label>
+                    <label style={{ fontWeight: "bold" }}>Expense</label>
                     <input
                       className="form-control py-3"
                       ref={(a) => (this._inputElement = a)}
@@ -64,7 +66,9 @@ export default class ExpenseList extends Component {
                     ></input>
                   </div>
                   <div className="col-sm">
-                    <label htmlFor="cost">Cost</label>
+                    <label className="mt-2" style={{ fontWeight: "bold" }}>
+                      Cost
+                    </label>
                     <input
                       className="form-control py-3"
                       type="number"
@@ -74,7 +78,7 @@ export default class ExpenseList extends Component {
                     ></input>
                   </div>
                   <div className="col-sm">
-                    <button type="submit" className="btn btn-primary my-4">
+                    <button type="submit" className="btn btn-success my-4">
                       Add
                     </button>
                   </div>
@@ -83,14 +87,17 @@ export default class ExpenseList extends Component {
             </div>
           </div>
         </div>
-        <div className="row mt-3">
-          <div className="col-sm">
-            <ul className="list-group">
-              <ExpenseItems
-                entries={this.state.items}
-                delete={this.deleteItem}
-              />
-            </ul>
+        <div className="border border-secondary rounded-3 mt-3 ">
+          <h3 className="badge-success rounded-3 m-1 py-4 px-4">Expenses </h3>
+          <div className="row my-4">
+            <div className="col-sm">
+              <ul className="list-group mr-4">
+                <ExpenseItems
+                  entries={this.state.items}
+                  delete={this.deleteItem}
+                />
+              </ul>
+            </div>
           </div>
         </div>
       </div>
