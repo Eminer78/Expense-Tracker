@@ -26,7 +26,7 @@ This tool is intended to provide a method for users to capture their expenses, e
 
 ## Future Enhancements
 
-- Provide capability to ammend the cost
+- Provide capability to ammend the item
 - Add a summation field to sum all the expenses
 - Differentiate between income vs expense
 
