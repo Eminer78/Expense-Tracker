@@ -16,7 +16,7 @@ const App = () => (
       <nav
         className="navbar navbar-expand-md navbar-light border border-rounded mx-4 my-4 pl-5"
         style={{
-          fontSize: "1.75em",
+          fontSize: "1.5em",
           backgroundColor: "lightgrey",
         }}
       >
