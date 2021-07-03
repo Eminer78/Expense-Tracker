@@ -32,7 +32,7 @@ const App = () => (
               <NavLink
                 className="nav-link"
                 exact
-                to="/ExpenseList"
+                to="/"
                 activeClassName="active"
               >
                 ExpenseList
