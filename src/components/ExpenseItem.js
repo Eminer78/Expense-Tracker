@@ -15,7 +15,7 @@ export default class ExpenseItems extends Component {
           <span className="expense-item">Date: {item.dDate} </span>
           <span className="expense-item">${item.cost}</span>
 
-          <button className="btn alert-warning mx-4 ">Paid</button>
+          <button className="btn alert-warning mx-4 ">Edit</button>
           <button
             className="btn alert-success"
             onClick={() => this.delete(item.key)}

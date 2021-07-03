@@ -28,12 +28,12 @@ const App = () => (
         </button>
         <div className="collapse navbar-collapse" id="collapsibleNavId">
           <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li>
+            <li className="nav-item">
               <NavLink
                 className="nav-link"
-                exact
+                exact={true}
                 to="/"
-                activeClassName="active"
+                activeClassName="active-link"
               >
                 ExpenseList
               </NavLink>
@@ -51,7 +51,6 @@ const App = () => (
           </ul>
         </div>
       </nav>
-
       <Route exact path="/" component={ExpenseList} />
       <Route path="/contact" component={Contact} />
     </Router>
