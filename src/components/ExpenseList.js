@@ -45,7 +45,7 @@ export default class ExpenseList extends Component {
       <div className="container">
         <div className="border border-secondary rounded-3 ">
           <h1
-            className="alert alert-primary rounded-3 m-1 py-4 px-4"
+            className="alert alert-primary rounded-3 m-1 py-4 px-3"
             style={{ fontSize: "2em" }}
           >
             Expense Tracker

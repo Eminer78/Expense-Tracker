@@ -1,4 +1,6 @@
-.strikeThrough {
-  text-decoration: line-through;
-  color: red;
+.footer-custom {
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+  color: navyblue;
 }
