@@ -9,30 +9,26 @@ export default class ExpenseItems extends Component {
 
   createExpenses(item) {
     return (
-      <li
-        className="list-group-item d-flex justify-content-between align-items-center"
-        key={item.key}
-      >
-        {item.text}
-        <div>
-          <span className="mx-4 px-4">Expense/Due Date: {item.dDate} </span>
-          <span className="mx-4 px-4">${item.cost}</span>
+      <div>
+        <li className="list-group-item d-flex justify-content-left align-items-center ">
+          <span className="expense-item">{item.text}</span>
+          <span className="expense-item">Date: {item.dDate} </span>
+          <span className="expense-item">${item.cost}</span>
+
           <button className="btn alert-warning mx-4 ">Paid</button>
           <button
             className="btn alert-success"
             onClick={() => this.delete(item.key)}
+            key={item.key}
           >
             Delete
           </button>
-        </div>
-      </li>
+        </li>
+      </div>
     );
   }
   delete(key) {
     this.props.delete(key);
-  }
-  paid(key) {
-    this.props.paid(key);
   }
 
   render() {

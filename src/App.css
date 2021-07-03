@@ -4,3 +4,7 @@
   text-align: center;
   color: navyblue;
 }
+.expense-item {
+  width: 25%;
+  padding-left: 5%;
+}

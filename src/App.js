@@ -3,12 +3,7 @@ import ExpenseList from "./components/ExpenseList";
 import Contact from "./components/Contact";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import {
-  BrowserRouter as Router,
-  Route,
-  Link,
-  NavLink,
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
 
 const App = () => (
   <>
