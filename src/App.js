@@ -28,16 +28,3 @@ const App = () => (
 );
 
 export default App;
-
-/*
-const App = () => {
-  return (
-    <div className="container">
-      <ExpenseList />
-    </div>
-  );
-};
-
-export default App;
-
-*/

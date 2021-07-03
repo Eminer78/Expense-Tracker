@@ -15,7 +15,7 @@ export default class ExpenseItems extends Component {
       >
         {item.text}
         <div>
-          <span className="mx-4 px-4">{item.dDate}: Due Date</span>
+          <span className="mx-4 px-4">Expense/Due Date: {item.dDate} </span>
           <span className="mx-4 px-4">${item.cost}</span>
           <button className="btn alert-warning mx-4 ">Paid</button>
           <button

@@ -50,6 +50,7 @@ export default class Contact extends Component {
                 id="email"
                 className="form-control py-3"
                 type="email"
+                placeholder="email"
                 required="required"
               ></input>
             </div>
