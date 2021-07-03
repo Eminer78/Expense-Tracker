@@ -14,10 +14,12 @@ export default class ExpenseList extends Component {
   }
 
   addItem(e) {
+    e.preventDefault();
     if (this._inputElement.value !== "") {
       var newItem = {
         text: this._inputElement.value,
         cost: this.cost.value,
+        dDate: this.dDate.value,
         key: Date.now(),
       };
       this.setState((prevState) => {
@@ -28,7 +30,7 @@ export default class ExpenseList extends Component {
     }
     this._inputElement.value = "";
     this.cost.value = "";
-    e.preventDefault();
+    this.dDate.value = "";
   }
 
   deleteItem(key) {
@@ -37,19 +39,20 @@ export default class ExpenseList extends Component {
     });
     this.setState({ items: filteredItems });
   }
+
   render() {
     return (
       <div className="container">
         <div className="border border-secondary rounded-3 ">
           <h1
-            className="badge-primary rounded-3 m-1 py-4 px-4"
+            className="alert alert-primary rounded-3 m-1 py-4 px-4"
             style={{ fontSize: "2em" }}
           >
             Expense Tracker
           </h1>
         </div>
         <div className="border border-secondary rounded-3 mt-3 ">
-          <h3 className="badge-secondary rounded-3 m-1 py-4 px-4">
+          <h3 className="alert alert-dark rounded-3 m-1 py-4 px-4">
             Add Expense
           </h3>
           <div className="mt-3">
@@ -78,7 +81,17 @@ export default class ExpenseList extends Component {
                     ></input>
                   </div>
                   <div className="col-sm">
-                    <button type="submit" className="btn btn-success my-4">
+                    <label className="mt-2" style={{ fontWeight: "bold" }}>
+                      Due Date
+                    </label>
+                    <input
+                      className="form-control py-3"
+                      type="date"
+                      ref={(c) => (this.dDate = c)}
+                    ></input>
+                  </div>
+                  <div className="col-sm">
+                    <button type="submit" className="alert alert-dark my-4">
                       Add
                     </button>
                   </div>
@@ -88,13 +101,16 @@ export default class ExpenseList extends Component {
           </div>
         </div>
         <div className="border border-secondary rounded-3 mt-3 ">
-          <h3 className="badge-success rounded-3 m-1 py-4 px-4">Expenses </h3>
+          <h3 className="alert alert-success rounded-3 m-1 py-4 px-4">
+            Expenses{" "}
+          </h3>
           <div className="row my-4">
             <div className="col-sm">
               <ul className="list-group mr-4">
                 <ExpenseItems
                   entries={this.state.items}
                   delete={this.deleteItem}
+                  paid={this.paidItem}
                 />
               </ul>
             </div>

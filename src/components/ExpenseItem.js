@@ -4,21 +4,23 @@ export default class ExpenseItems extends Component {
   constructor(props) {
     super();
 
-    this.createTasks = this.createTasks.bind(this);
+    this.createExpenses = this.createExpenses.bind(this);
   }
 
-  createTasks(item) {
+  createExpenses(item) {
     return (
-      <li className="list-group-item d-flex justify-content-between align-items-center">
+      <li
+        className="list-group-item d-flex justify-content-between align-items-center"
+        key={item.key}
+      >
         {item.text}
         <div>
-          <span className="label label-danger label-as-badge mx-4 px-4">
-            ${item.cost}
-          </span>
+          <span className="mx-4 px-4">{item.dDate}: Due Date</span>
+          <span className="mx-4 px-4">${item.cost}</span>
+          <button className="btn alert-warning mx-4 ">Paid</button>
           <button
-            className="btn btn-secondary"
+            className="btn alert-success"
             onClick={() => this.delete(item.key)}
-            key={item.key}
           >
             Delete
           </button>
@@ -29,10 +31,13 @@ export default class ExpenseItems extends Component {
   delete(key) {
     this.props.delete(key);
   }
+  paid(key) {
+    this.props.paid(key);
+  }
 
   render() {
     var expenseEntries = this.props.entries;
-    var listItems = expenseEntries.map(this.createTasks);
+    var listItems = expenseEntries.map(this.createExpenses);
     return <ul className="theList">{listItems}</ul>;
   }
 }
